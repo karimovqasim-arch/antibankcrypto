@@ -1,160 +1,259 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="AntiBank Crypto ABCR">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="AntiBank Crypto ABCR — Burn and Reward Token on BNB Smart Chain">
+
 <title>AntiBank Crypto | ABCR</title>
+
+<link rel="icon"
+type="image/svg+xml"
+href="/antibankcrypto/abcr-icon.svg">
+
 <style>
+
 :root {
-  color-scheme:dark;
-  --bg:#080e1b;
-  --card:#131f33;
-  --accent:#39dfb5;
-  --text:#f3f7fc;
-  --muted:#a5b5c9;
+  color-scheme: dark;
+  --bg: #080e1b;
+  --card: #131f33;
+  --accent: #39dfb5;
+  --text: #f3f7fc;
+  --muted: #a5b5c9;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-  line-height:1.6;
+
+* {
+  box-sizing: border-box;
 }
-header,main,footer{
-  max-width:1050px;
-  margin:auto;
-  padding:24px;
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
-nav{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  align-items:center;
+
+header, main, footer {
+  max-width: 1050px;
+  margin: auto;
+  padding: 24px;
 }
-.brand{
-  color:var(--accent);
-  font-size:22px;
-  font-weight:bold;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
 }
-a{color:var(--accent)}
-nav a{margin-right:12px}
-.hero{text-align:center;padding:65px 5px}
-h1{
-  font-size:clamp(38px,8vw,68px);
-  line-height:1.1;
-  margin:0;
+
+.brand {
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: bold;
 }
-h2{color:var(--accent)}
-.hero p,.muted{color:var(--muted)}
-.hero p{max-width:650px;margin:25px auto}
-section{margin-bottom:55px}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
+
+a {
+  color: var(--accent);
 }
-.card{
-  background:var(--card);
-  border:1px solid #26354b;
-  border-radius:15px;
-  padding:24px;
+
+nav a {
+  margin-right: 12px;
 }
-.value{font-size:26px;font-weight:bold}
-button,.button{
-  display:inline-block;
-  background:var(--accent);
-  color:#07111c;
-  padding:13px 20px;
-  border:0;
-  border-radius:9px;
-  font-size:15px;
-  font-weight:bold;
-  text-decoration:none;
-  cursor:pointer;
-  margin:6px 6px 6px 0;
+
+.hero {
+  text-align: center;
+  padding: 65px 5px;
 }
-button:disabled{opacity:.45;cursor:not-allowed}
-.secondary{background:#24334a;color:white}
-input{
-  width:100%;
-  padding:13px;
-  background:#0b1525;
-  color:white;
-  border:1px solid #46566d;
-  border-radius:9px;
-  font-size:16px;
-  margin:8px 0;
+
+h1 {
+  font-size: clamp(38px, 8vw, 68px);
+  line-height: 1.1;
+  margin: 0;
 }
-.address,#status{overflow-wrap:anywhere}
-.address{font-family:monospace;font-size:13px}
-#status{white-space:pre-wrap}
-footer{
-  text-align:center;
-  color:var(--muted);
-  border-top:1px solid #26354b;
+
+h2 {
+  color: var(--accent);
 }
+
+.hero p, .muted {
+  color: var(--muted);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 25px auto;
+}
+
+section {
+  margin-bottom: 55px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #26354b;
+  border-radius: 15px;
+  padding: 24px;
+}
+
+.value {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+button, .button {
+  display: inline-block;
+  background: var(--accent);
+  color: #07111c;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 6px 6px 6px 0;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: #24334a;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  background: #0b1525;
+  color: white;
+  border: 1px solid #46566d;
+  border-radius: 9px;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.address, #status {
+  overflow-wrap: anywhere;
+}
+
+.address {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+#status {
+  white-space: pre-wrap;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid #26354b;
+}
+
 </style>
+
 </head>
+
 <body>
 
 <header>
+
 <nav>
-<div class="brand">AntiBank Crypto</div>
+
+<div class="brand">
+AntiBank Crypto
+</div>
+
 <div>
 <a href="#app">Wallet</a>
 <a href="#about">About</a>
 <a href="#tokenomics">Tokenomics</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
+
 </header>
 
 <main>
 
 <section class="hero">
+
 <h1>AntiBank Crypto</h1>
+
 <h2>ABCR Token</h2>
+
 <p>
 An experimental cryptocurrency on BNB Smart Chain
 featuring token burning and time-based reward eligibility.
 </p>
-<a class="button" href="#app">Launch ABCR App</a>
+
+<a class="button" href="#app">
+Launch ABCR App
+</a>
+
 <a class="button secondary"
 href="https://bscscan.com/token/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener noreferrer">
 View on BscScan
 </a>
+
 </section>
 
 <section id="app">
+
 <h2>ABCR Wallet & Rewards</h2>
 
 <div class="card">
+
 <h3>Connect Your Wallet</h3>
 
 <button id="connect" disabled>
 Loading WalletConnect...
 </button>
 
-<button id="injected" class="secondary" hidden>
-Connect in Wallet Browser
-</button>
-
-<button id="disconnect" class="secondary" hidden>
+<button id="disconnect"
+class="secondary"
+hidden>
 Disconnect
 </button>
 
-<p id="wallet" class="muted">Not connected</p>
-<p id="network" class="muted">Network: —</p>
-<p id="balance">ABCR Balance: —</p>
+<p id="wallet" class="muted">
+Not connected
+</p>
+
+<p id="network" class="muted">
+Network: —
+</p>
+
+<p id="balance">
+ABCR Balance: —
+</p>
 
 <a class="button"
-href="https://pancakeswap.finance/swap?chain=bsc&outputCurrency=0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080"
-target="_blank" rel="noopener noreferrer">
+href="https://pancakeswap.finance/swap?chain=bsc&amp;outputCurrency=0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080"
+target="_blank"
+rel="noopener noreferrer">
 Buy ABCR
 </a>
 
@@ -162,585 +261,257 @@ Buy ABCR
 Trading requires an active liquidity pool.
 Check the token address before buying.
 </p>
+
 </div>
 
 <div class="grid" style="margin-top:18px">
 
 <div class="card">
+
 <h3>Burn ABCR</h3>
-<label for="burnAmount">Amount (ABCR)</label>
-<input id="burnAmount" type="text"
-inputmode="decimal" placeholder="1">
-<button id="burn" disabled>Burn ABCR</button>
+
+<label for="burnAmount">
+Amount (ABCR)
+</label>
+
+<input
+id="burnAmount"
+type="text"
+inputmode="decimal"
+placeholder="1">
+
+<button id="burn" disabled>
+Burn ABCR
+</button>
+
 <p class="muted">
-Burning is irreversible. Burned tokens cannot be recovered.
+Burning is irreversible.
+Burned tokens cannot be recovered.
 Rewards are not guaranteed.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Claim Rewards</h3>
-<p id="epoch">Current epoch: —</p>
-<p id="next">Next claim epoch: —</p>
-<label for="count">Maximum epochs (1–24)</label>
-<input id="count" type="number" min="1" max="24" value="1">
-<button id="claim" disabled>Claim Rewards</button>
+
+<p id="epoch">
+Current epoch: —
+</p>
+
+<p id="next">
+Next claim epoch: —
+</p>
+
+<label for="count">
+Maximum epochs (1–24)
+</label>
+
+<input
+id="count"
+type="number"
+min="1"
+max="24"
+value="1">
+
+<button id="claim" disabled>
+Claim Rewards
+</button>
+
 <p class="muted">
 Only eligible completed epochs may generate rewards.
 BNB gas fees apply.
 </p>
+
 </div>
 
 </div>
 
 <div class="card" style="margin-top:18px">
+
 <h3>Transaction Status</h3>
-<p id="status" class="muted"
-role="status" aria-live="polite">
+
+<p id="status"
+class="muted"
+role="status"
+aria-live="polite">
 Initializing wallet connection...
 </p>
+
 </div>
+
 </section>
 
 <section id="about">
+
 <h2>About AntiBank Crypto</h2>
+
 <p>
-AntiBank Crypto (ABCR) is an experimental BEP-20 token
-on BNB Smart Chain.
+AntiBank Crypto (ABCR) is an experimental BEP-20
+token on BNB Smart Chain.
 </p>
+
 <p>
-Its contract allows participants to permanently burn tokens
-to establish eligibility for subsequent reward epochs,
-subject to contract rules and limits.
+Its contract allows participants to permanently
+burn tokens to establish eligibility for subsequent
+reward epochs, subject to contract rules and limits.
 </p>
+
 </section>
 
 <section id="tokenomics">
+
 <h2>Tokenomics</h2>
+
 <div class="grid">
+
 <div class="card">
 <div class="muted">Symbol</div>
 <div class="value">ABCR</div>
 </div>
+
 <div class="card">
 <div class="muted">Initial Supply</div>
 <div class="value">10,000,000</div>
 </div>
+
 <div class="card">
 <div class="muted">Maximum Lifetime Mint</div>
 <div class="value">100,000,000</div>
 </div>
+
 <div class="card">
 <div class="muted">Blockchain</div>
 <div class="value">BNB Chain</div>
 </div>
+
 </div>
+
 <p class="muted">
 The maximum lifetime mint is a contract limit,
 not a promise that all tokens will be issued.
 </p>
+
 </section>
 
 <section>
+
 <h2>Burn & Reward</h2>
+
 <div class="grid">
+
 <div class="card">
+
 <h3>Token Burning</h3>
-<p>Burn ABCR permanently through the smart contract.</p>
+
+<p>
+Burn ABCR permanently through the smart contract.
+</p>
+
 </div>
+
 <div class="card">
+
 <h3>Reward Epochs</h3>
-<p>The contract defines 30-minute reward accounting periods.</p>
+
+<p>
+The contract defines 30-minute reward
+accounting periods.
+</p>
+
 </div>
+
 <div class="card">
+
 <h3>Transparency</h3>
-<p>Token transactions and contract source code can be inspected on BscScan.</p>
+
+<p>
+Token transactions and contract source code
+can be inspected on BscScan.
+</p>
+
 </div>
+
 </div>
+
 </section>
 
 <section>
+
 <h2>Smart Contract</h2>
+
 <div class="card">
-<p>Network: BNB Smart Chain Mainnet</p>
-<p>Standard: BEP-20 compatible</p>
+
+<p>
+Network: BNB Smart Chain Mainnet
+</p>
+
+<p>
+Standard: BEP-20 compatible
+</p>
+
 <p class="address">
 0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080
 </p>
-<a href="https://bscscan.com/address/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080#code"
-target="_blank" rel="noopener noreferrer">
+
+<a
+href="https://bscscan.com/address/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080#code"
+target="_blank"
+rel="noopener noreferrer">
 View Contract Code
 </a>
+
 </div>
+
 </section>
 
 <section id="contact">
+
 <h2>Official Contact</h2>
+
 <p>
 <a href="mailto:antibankcrypto.official@gmail.com">
 antibankcrypto.official@gmail.com
 </a>
 </p>
+
 <p class="muted">
 Never share your private key or recovery phrase.
 </p>
+
 </section>
 
 <section>
+
 <h2>Risk Disclosure</h2>
+
 <p class="muted">
 ABCR is an experimental cryptoasset.
-Token burning, reward eligibility and smart contract
-interaction involve risk. No profit, reward, market value,
-liquidity or exchange listing is guaranteed.
+Token burning, reward eligibility and smart
+contract interaction involve risk.
+No profit, reward, market value, liquidity
+or exchange listing is guaranteed.
 Verified source code is not a security audit.
 </p>
+
 </section>
 
 </main>
 
 <footer>
-<p>&copy; 2026 AntiBank Crypto (ABCR)</p>
-<p>Built on BNB Smart Chain</p>
+
+<p>
+&copy; 2026 AntiBank Crypto (ABCR)
+</p>
+
+<p>
+Built on BNB Smart Chain
+</p>
+
 </footer>
 
-<script type="module">
+<script type="module" src="/src/main.js"></script>
 
-const PROJECT_ID =
-"11650d5ae464169e12f6eff1d8769c5b";
-
-const ADDRESS =
-"0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080";
-
-const CHAIN_HEX = "0x38";
-
-const ABI = [
-"function balanceOf(address) view returns(uint256)",
-"function decimals() view returns(uint8)",
-"function burnForShares(uint256 amount)",
-"function claim(uint256 maxEpochs)",
-"function currentEpoch() view returns(uint256)",
-"function nextClaimEpoch(address) view returns(uint256)"
-];
-
-const $ = id => document.getElementById(id);
-
-const show = msg => {
-  $("status").textContent = String(msg);
-};
-
-const errorText = e =>
-  e?.shortMessage || e?.reason || e?.message || String(e);
-
-let ethers;
-let appKit;
-let account = null;
-let contract = null;
-let activeProvider = null;
-let connectionMode = null;
-let busy = false;
-let refreshSerial = 0;
-
-function setConnected() {
-  const connected = !!contract && !!account;
-  $("burn").disabled = !connected || busy;
-  $("claim").disabled = !connected || busy;
-  $("disconnect").hidden = !connected;
-  $("connect").textContent =
-    connected ? "Change Wallet" : "Connect Wallet";
-}
-
-function clearWallet() {
-  refreshSerial++;
-  account = null;
-  contract = null;
-  activeProvider = null;
-  connectionMode = null;
-  $("wallet").textContent = "Not connected";
-  $("network").textContent = "Network: —";
-  $("balance").textContent = "ABCR Balance: —";
-  $("epoch").textContent = "Current epoch: —";
-  $("next").textContent = "Next claim epoch: —";
-  setConnected();
-}
-
-function injectedProvider() {
-  const eth = window.ethereum;
-  if (!eth) return null;
-  const providers = eth.providers;
-  if (Array.isArray(providers) && providers.length) {
-    return providers.find(p =>
-      p.isTrust || p.isBinance || p.isMetaMask
-    ) || providers[0];
-  }
-  return eth;
-}
-
-async function refresh() {
-  if (!contract || !account) return;
-
-  const serial = refreshSerial;
-
-  const [balance, epoch, next] = await Promise.all([
-    contract.balanceOf(account),
-    contract.currentEpoch(),
-    contract.nextClaimEpoch(account)
-  ]);
-
-  if (serial !== refreshSerial) return;
-
-  $("balance").textContent =
-    "ABCR Balance: " + ethers.formatUnits(balance, 18);
-  $("epoch").textContent = "Current epoch: " + epoch;
-  $("next").textContent = "Next claim epoch: " + next;
-}
-
-async function attach(provider, address, mode) {
-  const serial = ++refreshSerial;
-
-  const browserProvider =
-    new ethers.BrowserProvider(provider);
-
-  const network = await browserProvider.getNetwork();
-
-  if (Number(network.chainId) !== 56) {
-    throw Error("Switch to BNB Smart Chain (56).");
-  }
-
-  const signer = await browserProvider.getSigner(address);
-
-  const nextContract =
-    new ethers.Contract(ADDRESS, ABI, signer);
-
-  const decimals = Number(await nextContract.decimals());
-
-  if (decimals !== 18) {
-    throw Error("Unexpected token decimals: " + decimals);
-  }
-
-  if (serial !== refreshSerial) return;
-
-  activeProvider = provider;
-  account = await signer.getAddress();
-  contract = nextContract;
-  connectionMode = mode;
-
-  $("wallet").textContent =
-    account.slice(0,8) + "..." + account.slice(-6);
-
-  $("network").textContent = "Network: BNB Smart Chain";
-
-  setConnected();
-  await refresh();
-  show("Wallet connected successfully.");
-}
-
-async function connectInjected() {
-  const provider = injectedProvider();
-
-  if (!provider) {
-    return show(
-      "No injected wallet found. Open this site inside a wallet DApp browser."
-    );
-  }
-
-  try {
-    show("Requesting wallet permission...");
-
-    let chain = await provider.request({
-      method: "eth_chainId"
-    });
-
-    if (Number(BigInt(chain)) !== 56) {
-      try {
-        await provider.request({
-          method: "wallet_switchEthereumChain",
-          params: [{chainId: CHAIN_HEX}]
-        });
-      } catch (e) {
-        if (e.code === 4902) {
-          await provider.request({
-            method: "wallet_addEthereumChain",
-            params: [{
-              chainId: CHAIN_HEX,
-              chainName: "BNB Smart Chain",
-              nativeCurrency: {
-                name: "BNB",
-                symbol: "BNB",
-                decimals: 18
-              },
-              rpcUrls: [
-                "https://bsc-dataseed.binance.org/"
-              ],
-              blockExplorerUrls: [
-                "https://bscscan.com"
-              ]
-            }]
-          });
-        } else {
-          throw e;
-        }
-      }
-    }
-
-    const addresses = await provider.request({
-      method: "eth_requestAccounts"
-    });
-
-    if (!addresses?.length) {
-      throw Error("No account returned.");
-    }
-
-    await attach(provider, addresses[0], "injected");
-
-  } catch (e) {
-    show("Direct wallet error: " + errorText(e));
-  }
-}
-
-async function syncAppKit() {
-  if (!appKit || connectionMode === "injected") return;
-
-  try {
-    const address = appKit.getAddress?.();
-    const provider = appKit.getWalletProvider?.();
-
-    if (!address || !provider) {
-      if (connectionMode === "appkit") clearWallet();
-      return;
-    }
-
-    if (Number(appKit.getChainId?.()) !== 56) {
-      show("Switch to BNB Smart Chain (56).");
-      return;
-    }
-
-    if (
-      connectionMode === "appkit" &&
-      account?.toLowerCase() === address.toLowerCase() &&
-      contract
-    ) return;
-
-    await attach(provider, address, "appkit");
-
-  } catch (e) {
-    show("Wallet connection error: " + errorText(e));
-  }
-}
-
-async function transaction(label, send) {
-  if (busy) return;
-
-  busy = true;
-  setConnected();
-
-  try {
-    if (!contract) throw Error("Connect wallet first.");
-
-    const network =
-      await contract.runner.provider.getNetwork();
-
-    if (Number(network.chainId) !== 56) {
-      throw Error("Switch to BNB Smart Chain.");
-    }
-
-    const tx = await send();
-
-    show(
-      label + " submitted:\n" +
-      tx.hash + "\nWaiting for confirmation..."
-    );
-
-    const receipt = await tx.wait();
-
-    if (receipt.status !== 1) {
-      throw Error("Transaction failed.");
-    }
-
-    show(
-      label + " confirmed:\n" +
-      "https://bscscan.com/tx/" + tx.hash
-    );
-
-    await refresh();
-
-  } catch (e) {
-    show(errorText(e));
-  } finally {
-    busy = false;
-    setConnected();
-  }
-}
-
-async function burn() {
-  if (!contract) return show("Connect wallet first.");
-
-  const value = $("burnAmount").value.trim();
-
-  if (!/^(?:0|[1-9]\d*)(?:\.\d{1,18})?$/.test(value)) {
-    return show("Enter a valid ABCR amount.");
-  }
-
-  try {
-    const amount = ethers.parseUnits(value, 18);
-
-    if (amount <= 0n) {
-      return show("Amount must be greater than zero.");
-    }
-
-    const balance = await contract.balanceOf(account);
-
-    if (amount > balance) {
-      return show("Insufficient ABCR balance.");
-    }
-
-    if (!confirm(
-      "Permanently burn " + value + " ABCR?"
-    )) return;
-
-    await transaction(
-      "Burn",
-      () => contract.burnForShares(amount)
-    );
-
-  } catch (e) {
-    show(errorText(e));
-  }
-}
-
-async function claim() {
-  if (!contract) return show("Connect wallet first.");
-
-  const count = Number($("count").value);
-
-  if (!Number.isInteger(count) || count < 1 || count > 24) {
-    return show("Choose between 1 and 24 epochs.");
-  }
-
-  try {
-    const [current, next] = await Promise.all([
-      contract.currentEpoch(),
-      contract.nextClaimEpoch(account)
-    ]);
-
-    if (next >= current) {
-      return show("No completed claimable epoch yet.");
-    }
-
-    if (!confirm(
-      "Claim rewards for up to " + count + " epochs?"
-    )) return;
-
-    await transaction(
-      "Claim",
-      () => contract.claim(BigInt(count))
-    );
-
-  } catch (e) {
-    show(errorText(e));
-  }
-}
-
-$("injected").onclick = connectInjected;
-$("burn").onclick = burn;
-$("claim").onclick = claim;
-
-$("disconnect").onclick = async () => {
-  try {
-    if (connectionMode === "appkit") {
-      await appKit?.disconnect();
-    }
-  } catch (e) {
-    show(errorText(e));
-  } finally {
-    clearWallet();
-    show("Wallet disconnected from this page.");
-  }
-};
-
-window.addEventListener("error", e => {
-  show("JavaScript error: " + e.message);
-});
-
-window.addEventListener("unhandledrejection", e => {
-  show("Async error: " + errorText(e.reason));
-});
-
-try {
-  show("Loading wallet libraries...");
-
-  const modules = await Promise.all([
-    import("https://esm.sh/ethers@6.13.5?bundle"),
-    import("https://esm.sh/@reown/appkit@1.8.15?bundle"),
-    import("https://esm.sh/@reown/appkit-adapter-ethers@1.8.15?bundle"),
-    import("https://esm.sh/@reown/appkit@1.8.15/networks?bundle")
-  ]);
-
-  ethers = modules[0].ethers;
-
-  const {createAppKit} = modules[1];
-  const {EthersAdapter} = modules[2];
-  const {bsc} = modules[3];
-
-  if (injectedProvider()) {
-    $("injected").hidden = false;
-    show("Wallet browser detected. Use direct connection.");
-  }
-
-  try {
-    appKit = createAppKit({
-      adapters: [new EthersAdapter()],
-      networks: [bsc],
-      defaultNetwork: bsc,
-      projectId: PROJECT_ID,
-      metadata: {
-        name: "AntiBank Crypto | ABCR",
-        description: "ABCR burn and reward application",
-        url: location.origin + location.pathname,
-        icons: [
-          "https://karimovqasim-arch.github.io/antibankcrypto/abcr-icon.svg"
-        ]
-      },
-      features: {
-        analytics: false,
-        socials: ["google"],
-        email: true
-      }
-    });
-
-    $("connect").disabled = false;
-    $("connect").textContent = "Connect Wallet";
-
-    $("connect").onclick = async () => {
-      try {
-        await appKit.open({view:"Connect"});
-      } catch (e) {
-        show("Connection error: " + errorText(e));
-      }
-    };
-
-    appKit.subscribeAccount(() => {
-      void syncAppKit();
-    });
-
-    appKit.subscribeNetwork(() => {
-      void syncAppKit();
-    });
-
-    if (!injectedProvider()) {
-      show("WalletConnect ready.");
-    }
-
-    void syncAppKit();
-
-  } catch (e) {
-    show("Reown initialization error: " + errorText(e));
-  }
-
-} catch (e) {
-  show("Library loading error: " + errorText(e));
-}
-
-</script>
 </body>
 </html>
