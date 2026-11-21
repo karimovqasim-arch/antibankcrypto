@@ -4,100 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AntiBank Crypto (ABCR) — a BEP-20 token on BNB Smart Chain with an experimental burn-and-reward mechanism.">
+  <meta name="description" content="AntiBank Crypto (ABCR) — an experimental BEP-20 token on BNB Smart Chain with a burn-and-reward mechanism.">
   <title>AntiBank Crypto | ABCR</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #080e1b;
-      --card: #131f33;
-      --accent: #39dfb5;
-      --text: #f3f7fc;
-      --muted: #a5b5c9;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header, main, footer {
-      max-width: 1050px;
-      margin: auto;
-      padding: 25px;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .brand {
-      font-weight: bold;
-      font-size: 22px;
-      color: var(--accent);
-    }
-    a { color: var(--accent); }
-    nav a { margin-right: 12px; }
-    .hero {
-      text-align: center;
-      padding: 85px 10px;
-    }
-    h1 {
-      font-size: clamp(38px, 8vw, 70px);
-      line-height: 1.1;
-      margin: 0;
-    }
-    h2 { color: var(--accent); }
-    .hero p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 25px auto;
-    }
-    .button {
-      display: inline-block;
-      background: var(--accent);
-      color: #07111c;
-      padding: 12px 22px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 8px;
-    }
-    .secondary {
-      background: var(--card);
-      color: var(--text);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: var(--card);
-      padding: 24px;
-      border-radius: 15px;
-      border: 1px solid #26354b;
-    }
-    .value {
-      font-size: 27px;
-      font-weight: bold;
-    }
-    section { margin-bottom: 65px; }
-    .muted { color: var(--muted); }
-    .address {
-      overflow-wrap: anywhere;
-      font-family: monospace;
-      font-size: 14px;
-    }
-    footer {
-      border-top: 1px solid #26354b;
-      color: var(--muted);
-      text-align: center;
-    }
+    :root { color-scheme:dark; --bg:#080e1b; --card:#131f33; --accent:#39dfb5; --text:#f3f7fc; --muted:#a5b5c9; }
+    * {box-sizing:border-box}
+    body {margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
+    header,main,footer {max-width:1050px;margin:auto;padding:25px}
+    nav {display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .brand {font-weight:bold;font-size:22px;color:var(--accent)}
+    a {color:var(--accent)}
+    nav a {margin-right:12px}
+    .hero {text-align:center;padding:65px 10px}
+    h1 {font-size:clamp(38px,8vw,70px);line-height:1.1;margin:0}
+    h2 {color:var(--accent)}
+    .hero p {color:var(--muted);max-width:650px;margin:25px auto}
+    .button,button {display:inline-block;background:var(--accent);color:#07111c;padding:12px 22px;border:0;border-radius:9px;text-decoration:none;font-weight:bold;margin:8px;cursor:pointer;font-size:15px}
+    button:disabled {opacity:.55;cursor:not-allowed}
+    .secondary {background:var(--card);color:var(--text);border:1px solid #35485e}
+    .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card {background:var(--card);padding:24px;border-radius:15px;border:1px solid #26354b}
+    .value {font-size:27px;font-weight:bold}
+    section {margin-bottom:65px}
+    .muted {color:var(--muted)}
+    .address {overflow-wrap:anywhere;font-family:monospace;font-size:14px}
+    input {width:100%;padding:13px;border:1px solid #46566d;border-radius:9px;background:#0b1525;color:white;font-size:16px;margin:8px 0}
+    .status {white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);min-height:25px}
+    .wallet-actions {display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    footer {border-top:1px solid #26354b;color:var(--muted);text-align:center}
   </style>
 </head>
 <body>
@@ -107,6 +41,7 @@
       <div>
         <a href="#about">About</a>
         <a href="#tokenomics">Tokenomics</a>
+        <a href="#app">Wallet & Rewards</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -116,63 +51,66 @@
     <section class="hero">
       <h1>AntiBank Crypto</h1>
       <h2>ABCR Token</h2>
-      <p>
-        An experimental BEP-20 cryptocurrency on BNB Smart Chain,
-        exploring token burning, time-based reward eligibility
-        and transparent smart contract rules.
-      </p>
-      <a class="button"
-         href="https://bscscan.com/token/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080"
-         target="_blank" rel="noopener noreferrer">
-        View on BscScan
-      </a>
-      <a class="button secondary" href="#about">
-        Explore Project
-      </a>
+      <p>An experimental BEP-20 cryptocurrency on BNB Smart Chain, exploring token burning, time-based reward eligibility and transparent smart contract rules.</p>
+      <a class="button" href="#app">Buy, Burn & Claim</a>
+      <a class="button secondary" href="https://bscscan.com/token/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080" target="_blank" rel="noopener noreferrer">View on BscScan</a>
+    </section>
+
+    <section id="app">
+      <h2>ABCR Wallet & Rewards</h2>
+      <div class="card">
+        <div class="wallet-actions">
+          <button id="connect">Connect Wallet</button>
+          <span id="wallet" class="muted">Not connected</span>
+        </div>
+        <p id="balance" class="muted">ABCR balance: —</p>
+        <p id="network" class="muted">Network: —</p>
+        <a class="button" href="https://pancakeswap.finance/swap?chain=bsc&outputCurrency=0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080" target="_blank" rel="noopener noreferrer">Buy ABCR on PancakeSwap</a>
+        <p class="muted">Trading requires an active liquidity pool. Verify the token contract before swapping.</p>
+      </div>
+
+      <div class="grid" style="margin-top:18px">
+        <div class="card">
+          <h3>Burn ABCR</h3>
+          <label for="burnAmount">Amount to burn (ABCR)</label>
+          <input id="burnAmount" type="text" inputmode="decimal" placeholder="e.g. 1" autocomplete="off">
+          <button id="burn" disabled>Burn ABCR</button>
+          <p class="muted">Burning is permanent and irreversible. You must confirm the transaction in your wallet. Rewards are not guaranteed.</p>
+        </div>
+
+        <div class="card">
+          <h3>Claim Rewards</h3>
+          <p id="claimEpoch" class="muted">Next claim epoch: —</p>
+          <p id="currentEpoch" class="muted">Current epoch: —</p>
+          <label for="claimCount">Maximum epochs to claim (1–24)</label>
+          <input id="claimCount" type="number" min="1" max="24" step="1" value="1">
+          <button id="claim" disabled>Claim Rewards</button>
+          <p class="muted">Only completed, eligible epochs may produce rewards. Claiming requires BNB for gas.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <strong>Transaction status</strong>
+        <p id="status" class="status" role="status" aria-live="polite">Connect your wallet to get started.</p>
+      </div>
     </section>
 
     <section id="about">
       <h2>About AntiBank Crypto</h2>
-      <p>
-        AntiBank Crypto (ABCR) is an experimental blockchain
-        token built on BNB Smart Chain.
-      </p>
-      <p>
-        Its smart contract includes a burn-and-reward mechanism.
-        Users may burn tokens to establish reward eligibility
-        for subsequent time-based epochs, subject to the
-        conditions and limits defined in the contract.
-      </p>
-      <p class="muted">
-        Burning tokens does not guarantee profits, token value,
-        or future rewards.
-      </p>
+      <p>AntiBank Crypto (ABCR) is an experimental blockchain token built on BNB Smart Chain.</p>
+      <p>Its smart contract includes a burn-and-reward mechanism. Users may burn tokens to establish reward eligibility for subsequent time-based epochs, subject to the conditions and limits defined in the contract.</p>
+      <p class="muted">Burning tokens does not guarantee profits, token value, or future rewards.</p>
     </section>
 
     <section id="tokenomics">
       <h2>Tokenomics</h2>
       <div class="grid">
-        <div class="card">
-          <div class="muted">Token Symbol</div>
-          <div class="value">ABCR</div>
-        </div>
-        <div class="card">
-          <div class="muted">Initial Supply</div>
-          <div class="value">10,000,000</div>
-        </div>
-        <div class="card">
-          <div class="muted">Maximum Lifetime Mint</div>
-          <div class="value">100,000,000</div>
-        </div>
-        <div class="card">
-          <div class="muted">Blockchain</div>
-          <div class="value">BNB Chain</div>
-        </div>
+        <div class="card"><div class="muted">Token Symbol</div><div class="value">ABCR</div></div>
+        <div class="card"><div class="muted">Initial Supply</div><div class="value">10,000,000</div></div>
+        <div class="card"><div class="muted">Maximum Lifetime Mint</div><div class="value">100,000,000</div></div>
+        <div class="card"><div class="muted">Blockchain</div><div class="value">BNB Chain</div></div>
       </div>
-      <p class="muted">
-        The maximum lifetime mint is a contract limit,
-        not a guarantee that all tokens will be issued.
-      </p>
+      <p class="muted">The maximum lifetime mint is a contract limit, not a guarantee that all tokens will be issued.</p>
     </section>
 
     <section>
@@ -199,38 +137,20 @@
         <p><strong>Network:</strong> BNB Smart Chain Mainnet</p>
         <p><strong>Standard:</strong> BEP-20 compatible</p>
         <p><strong>Contract Address:</strong></p>
-        <p class="address">
-          0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080
-        </p>
-        <a href="https://bscscan.com/address/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080#code"
-           target="_blank" rel="noopener noreferrer">
-          View Verified Source Code
-        </a>
+        <p class="address">0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080</p>
+        <a href="https://bscscan.com/address/0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080#code" target="_blank" rel="noopener noreferrer">View Verified Source Code</a>
       </div>
     </section>
 
     <section id="contact">
       <h2>Official Contact</h2>
-      <p>
-        Email:
-        <a href="mailto:antibankcrypto.official@gmail.com">
-          antibankcrypto.official@gmail.com
-        </a>
-      </p>
-      <p class="muted">
-        Never share your private keys or recovery phrases.
-      </p>
+      <p>Email: <a href="mailto:antibankcrypto.official@gmail.com">antibankcrypto.official@gmail.com</a></p>
+      <p class="muted">Never share your private keys or recovery phrases.</p>
     </section>
 
     <section>
       <h2>Risk Disclosure</h2>
-      <p class="muted">
-        ABCR is an experimental cryptoasset. Its smart contract
-        may contain technical or economic risks. Cryptocurrency
-        markets are volatile. No investment returns, liquidity,
-        or future exchange listings are guaranteed.
-        Source-code verification does not constitute a security audit.
-      </p>
+      <p class="muted">ABCR is an experimental cryptoasset. Its smart contract may contain technical or economic risks. Cryptocurrency markets are volatile. No investment returns, liquidity, or future exchange listings are guaranteed. Source-code verification does not constitute a security audit.</p>
     </section>
   </main>
 
@@ -238,5 +158,174 @@
     <p>&copy; 2026 AntiBank Crypto (ABCR)</p>
     <p>Built on BNB Smart Chain</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+  <script>
+    (() => {
+      'use strict';
+
+      const ADDRESS = '0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080';
+      const ABI = [
+        'function balanceOf(address) view returns (uint256)',
+        'function decimals() view returns (uint8)',
+        'function burnForShares(uint256 amount)',
+        'function claim(uint256 maxEpochs)',
+        'function currentEpoch() view returns (uint256)',
+        'function nextClaimEpoch(address) view returns (uint256)'
+      ];
+
+      let provider, signer, contract, account;
+      const $ = id => document.getElementById(id);
+      const status = message => { $('status').textContent = message; };
+
+      function errorMessage(error) {
+        return error?.shortMessage || error?.reason || error?.message || String(error);
+      }
+
+      async function switchBsc() {
+        let chain = await window.ethereum.request({method:'eth_chainId'});
+        if (chain.toLowerCase() !== '0x38') {
+          try {
+            await window.ethereum.request({
+              method:'wallet_switchEthereumChain',
+              params:[{chainId:'0x38'}]
+            });
+          } catch (e) {
+            if (e.code !== 4902) throw e;
+            await window.ethereum.request({
+              method:'wallet_addEthereumChain',
+              params:[{
+                chainId:'0x38',
+                chainName:'BNB Smart Chain',
+                nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},
+                rpcUrls:['https://bsc-dataseed.bnbchain.org'],
+                blockExplorerUrls:['https://bscscan.com']
+              }]
+            });
+          }
+          chain = await window.ethereum.request({method:'eth_chainId'});
+          if (chain.toLowerCase() !== '0x38') {
+            throw Error('Switch to BNB Smart Chain first.');
+          }
+        }
+        $('network').textContent = 'Network: BNB Smart Chain';
+      }
+
+      async function refresh() {
+        if (!contract || !account) return;
+        const [balance, epoch, next] = await Promise.all([
+          contract.balanceOf(account),
+          contract.currentEpoch(),
+          contract.nextClaimEpoch(account)
+        ]);
+        $('balance').textContent = 'ABCR balance: ' + ethers.formatUnits(balance,18);
+        $('currentEpoch').textContent = 'Current epoch: ' + epoch.toString();
+        $('claimEpoch').textContent = 'Next claim epoch: ' + next.toString();
+      }
+
+      async function connect() {
+        try {
+          if (!window.ethereum) {
+            throw Error('Open this website in a Web3 wallet browser (such as Trust Wallet dApp browser), or install a compatible wallet extension.');
+          }
+          if (!window.ethers) {
+            throw Error('Web3 library did not load. Check your internet connection.');
+          }
+
+          await window.ethereum.request({method:'eth_requestAccounts'});
+          await switchBsc();
+
+          provider = new ethers.BrowserProvider(window.ethereum);
+          signer = await provider.getSigner();
+          account = await signer.getAddress();
+          contract = new ethers.Contract(ADDRESS, ABI, signer);
+
+          const decimals = await contract.decimals();
+          if (Number(decimals) !== 18) {
+            throw Error('Unexpected token decimals. Transactions disabled.');
+          }
+
+          $('wallet').textContent = account.slice(0,6)+'…'+account.slice(-4);
+          $('burn').disabled = false;
+          $('claim').disabled = false;
+          status('Wallet connected. Verify transaction details in your wallet.');
+          await refresh();
+        } catch(e) {
+          status(errorMessage(e));
+        }
+      }
+
+      async function execute(label, transaction) {
+        const tx = await transaction;
+        status(label+' submitted: '+tx.hash+'\nWaiting for confirmation…');
+        const receipt = await tx.wait();
+
+        if (receipt.status !== 1) {
+          throw Error(label+' transaction failed.');
+        }
+
+        status(label+' confirmed: https://bscscan.com/tx/'+tx.hash);
+        await refresh();
+      }
+
+      async function burn() {
+        try {
+          if (!contract) throw Error('Connect your wallet first.');
+          await switchBsc();
+
+          const input = $('burnAmount').value.trim();
+          if (!/^(?:0|[1-9]\d*)(?:\.\d{1,18})?$/.test(input)) {
+            throw Error('Enter a valid ABCR amount (maximum 18 decimals).');
+          }
+
+          const amount = ethers.parseUnits(input,18);
+          if (amount <= 0n) throw Error('Amount must be greater than zero.');
+
+          const balance = await contract.balanceOf(account);
+          if (amount > balance) throw Error('Insufficient ABCR balance.');
+
+          if (!confirm('Permanently burn '+input+' ABCR? Burned tokens cannot be recovered.')) return;
+          await execute('Burn',contract.burnForShares(amount));
+        } catch(e) {
+          status(errorMessage(e));
+        }
+      }
+
+      async function claim() {
+        try {
+          if (!contract) throw Error('Connect your wallet first.');
+          await switchBsc();
+
+          const count = Number($('claimCount').value);
+          if (!Number.isInteger(count) || count < 1 || count > 24) {
+            throw Error('Choose 1–24 epochs.');
+          }
+
+          const [epoch, next] = await Promise.all([
+            contract.currentEpoch(),
+            contract.nextClaimEpoch(account)
+          ]);
+
+          if (next >= epoch) {
+            throw Error('No completed claimable epoch yet.');
+          }
+
+          if (!confirm('Claim rewards for up to '+count+' completed epochs? BNB network fees apply.')) return;
+          await execute('Claim',contract.claim(BigInt(count)));
+        } catch(e) {
+          status(errorMessage(e));
+        }
+      }
+
+      $('connect').addEventListener('click',connect);
+      $('burn').addEventListener('click',burn);
+      $('claim').addEventListener('click',claim);
+
+      if (window.ethereum?.on) {
+        window.ethereum.on('accountsChanged',() => location.reload());
+        window.ethereum.on('chainChanged',() => location.reload());
+      }
+    })();
+  </script>
 </body>
 </html>
