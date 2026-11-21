@@ -1,5 +1,4 @@
-document.getElementById('status').textContent =
-  'TEST: JavaScript işə düşdü';
+
 import { createAppKit } from '@reown/appkit';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { bsc } from '@reown/appkit/networks';
