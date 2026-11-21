@@ -205,7 +205,19 @@ async function claim() {
 }
 
 $('connect').onclick = () => appKit.open({ view: 'Connect' });
-$('disconnect').onclick = () => appKit.disconnect();
+
+$('disconnect').onclick = async () => {
+  try {
+    status('Disconnecting...');
+    await appKit.disconnect();
+    ++syncId;
+    resetWallet();
+    status('Wallet disconnected.');
+  } catch (error) {
+    status('Disconnect error: ' + (error.message || String(error)));
+  }
+};
+
 $('burn').onclick = burn;
 $('claim').onclick = claim;
 
