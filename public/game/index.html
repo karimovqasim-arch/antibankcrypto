@@ -1,0 +1,239 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b09">
+<title>ABCR Slap Arena</title>
+<style>
+:root{
+  font-family:Inter,system-ui,Arial,sans-serif;
+  color:#eaffee;
+  background:#070b09;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:radial-gradient(ellipse at 50% 10%,#16452a 0,#070b09 55%);
+  min-height:100dvh;
+}
+main{max-width:530px;margin:auto;padding:22px 18px 50px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:900;letter-spacing:.07em;color:#65ff9d}
+.tag{
+  font-size:11px;
+  border:1px solid #327a50;
+  border-radius:30px;
+  padding:7px 10px;
+  color:#9ff7b8;
+}
+h1{font-size:clamp(29px,7vw,44px);line-height:1.05;margin:32px 0 10px}
+h1 span{color:#62ff9d}
+p{color:#9cb9a5;line-height:1.5}
+.card{
+  background:#101a14;
+  border:1px solid #285239;
+  border-radius:22px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow:0 14px 50px #0005;
+}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.stat{background:#0b130e;border-radius:13px;padding:12px 7px;text-align:center}
+.stat strong{display:block;font-size:22px;color:#7dffa8}
+.stat small{font-size:11px;color:#98bba5}
+.arena{text-align:center;position:relative;padding:26px 0 10px;user-select:none}
+.target{
+  touch-action:manipulation;
+  cursor:pointer;
+  display:block;
+  border:0;
+  margin:0 auto;
+  background:radial-gradient(circle at 35% 25%,#b5ffb0,#52d886 58%,#17663d);
+  border-radius:50%;
+  width:min(65vw,265px);
+  height:min(65vw,265px);
+  font-size:115px;
+  box-shadow:0 0 0 12px #183825,0 0 70px #34ff8140;
+  transition:transform .1s;
+  position:relative;
+}
+.target:active,.target.hit{transform:rotate(-9deg) scale(.92)}
+.pop{
+  position:absolute;
+  left:50%;
+  top:40%;
+  color:#a8ffae;
+  font-weight:900;
+  font-size:32px;
+  animation:float .55s ease-out forwards;
+  pointer-events:none;
+}
+@keyframes float{
+  to{transform:translate(-50px,-100px);opacity:0}
+}
+.meter{height:12px;border-radius:30px;background:#23382b;overflow:hidden}
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#21b86a,#a6ff65);
+  transition:width .15s;
+}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.muted{font-size:13px;color:#9ab6a1}
+.btn{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:16px;
+  font-weight:800;
+  background:#69ff9b;
+  color:#06220f;
+  cursor:pointer;
+  text-align:center;
+  text-decoration:none;
+}
+.btn:disabled{background:#385a43;color:#a4b7aa;cursor:not-allowed}
+.outline{
+  background:transparent;
+  border:1px solid #397a52;
+  color:#c8ffdc;
+  margin-top:9px;
+}
+.notice{
+  border-left:3px solid #a6e67e;
+  padding-left:12px;
+  font-size:13px;
+  color:#b2c9b8;
+}
+footer{text-align:center;font-size:12px;color:#8fa69a;margin-top:25px}
+a{color:#7dffa8}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="logo">◉ ABCR <span style="color:#eaffee">SLAP ARENA</span></div>
+  <div class="tag">TELEGRAM MINI APP</div>
+</header>
+
+<h1>SLAP. SCORE.<br><span>LEVEL UP.</span></h1>
+<p>Tap the cartoon training dummy and build your slap score. This is a preview game; token rewards are not live.</p>
+
+<div class="card">
+  <div class="stats">
+    <div class="stat">
+      <strong id="score">0</strong>
+      <small>Total slaps</small>
+    </div>
+    <div class="stat">
+      <strong id="cycle">0</strong>
+      <small>Current cycle</small>
+    </div>
+    <div class="stat">
+      <strong>1,000</strong>
+      <small>Target slaps</small>
+    </div>
+  </div>
+
+  <div class="arena" id="arena">
+    <button id="target" class="target" aria-label="Slap the cartoon training dummy">🥊</button>
+    <p><strong>SLAP THE DUMMY!</strong></p>
+  </div>
+
+  <div class="row">
+    <span class="muted">Progress to 1,000</span>
+    <strong id="percent">0%</strong>
+  </div>
+  <div class="meter" role="progressbar" aria-label="Slap progress" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0" id="meter">
+    <div class="fill" id="fill"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="row">
+    <strong>🎁 Reward rules</strong>
+    <span class="tag">PREVIEW</span>
+  </div>
+  <p>
+    Proposed reward: <strong style="color:#83ffab">100 ABCR</strong>
+    for 1,000 verified slaps, maximum once per 48 hours,
+    subject to eligibility and available reward budget.
+  </p>
+  <p id="status" class="notice" aria-live="polite">
+    Practice mode only. No real ABCR can be claimed yet.
+  </p>
+  <button id="claim" class="btn" disabled>
+    Claim 100 ABCR — Coming Soon
+  </button>
+  <a class="btn outline" href="../">← Back to AntiBank Crypto</a>
+</div>
+
+<footer>
+  AntiBank Crypto • On-chain rewards are separate from this game •
+  <a href="../whitepaper.html">Whitepaper</a>
+</footer>
+</main>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+(()=>{
+  'use strict';
+  const app=window.Telegram?.WebApp;
+  try{app?.ready();app?.expand()}catch{}
+
+  const key='abcr-slap-arena-preview-v1';
+  let score=0;
+  try{
+    const value=Number(localStorage.getItem(key));
+    if(Number.isSafeInteger(value)&&value>=0)
+      score=Math.min(value,100000000);
+  }catch{}
+
+  const $=id=>document.getElementById(id);
+
+  function render(){
+    const progress=score%1000;
+    const display=score>0&&progress===0?100:Math.floor(progress/10);
+    $('score').textContent=score.toLocaleString('en-US');
+    $('cycle').textContent=Math.floor(score/1000).toLocaleString('en-US');
+    $('percent').textContent=display+'%';
+    $('fill').style.width=display+'%';
+    $('meter').setAttribute('aria-valuenow',progress);
+    $('status').textContent=score>=1000
+      ?'Practice target reached! Real rewards require server verification and are not enabled.'
+      :'Practice mode only. No real ABCR can be claimed yet.';
+  }
+
+  let last=0;
+  $('target').addEventListener('click',()=>{
+    const now=performance.now();
+    if(now-last<65)return;
+    last=now;
+    score++;
+
+    try{localStorage.setItem(key,String(score))}catch{}
+    render();
+
+    const t=$('target');
+    t.classList.remove('hit');
+    void t.offsetWidth;
+    t.classList.add('hit');
+
+    const pop=document.createElement('span');
+    pop.className='pop';
+    pop.textContent='+1';
+    $('arena').appendChild(pop);
+    setTimeout(()=>pop.remove(),600);
+
+    try{app?.HapticFeedback?.impactOccurred('light')}catch{}
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
