@@ -7,14 +7,13 @@
         content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#080e0d" />
   <meta name="description"
-        content="AntiBank Crypto (ABCR): explore on-chain burn participation and epoch-based rewards on BNB Smart Chain." />
+        content="AntiBank Crypto (ABCR): on-chain burn participation and epoch-based rewards on BNB Smart Chain." />
 
   <title>AntiBank Crypto | ABCR</title>
 
   <link rel="icon"
         href="/abcr-icon.svg"
         type="image/svg+xml" />
-
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -132,7 +131,7 @@
 
       <div class="app-grid">
 
-        <!-- WALLET PANEL -->
+        <!-- WALLET -->
         <div class="panel wallet-panel">
 
           <div class="panel-head">
@@ -152,11 +151,9 @@
             <div>
               <strong>Desktop Mode Required</strong>
               <p>
-                WalletConnect currently works only
-                in Desktop Site mode. On mobile,
-                open your browser menu and enable
-                "Desktop site" before connecting
-                your wallet.
+                If WalletConnect does not work
+                in your mobile browser, try
+                enabling Desktop Site mode.
               </p>
             </div>
           </div>
@@ -221,7 +218,6 @@
             <span class="panel-symbol">✳</span>
           </div>
 
-          <!-- BUY BUTTON -->
           <a
             class="button primary full"
             href="https://pancakeswap.finance/swap?chain=bsc&amp;inputCurrency=BNB&amp;outputCurrency=0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080"
@@ -291,9 +287,10 @@
           </button>
 
           <p class="field-help">
-            Each claim processes up to 24 completed
-            reward epochs. Rewards depend on your
-            share of the total burn participation.
+            Each claim processes up to 24
+            completed reward epochs.
+            Rewards depend on your share
+            of total burn participation.
             BNB gas fees apply.
           </p>
 
@@ -325,7 +322,7 @@
 
       </div>
 
-      <!-- Reward dashboard is inserted by main.js -->
+      <!-- REWARD DASHBOARD INSERTED BY main.js -->
 
     </section>
 
@@ -347,9 +344,9 @@
           <span class="step">01</span>
           <h3>Connect your wallet</h3>
           <p>
-            Use a compatible wallet on BNB
-            Smart Chain and check the address
-            before proceeding.
+            Use a compatible wallet on
+            BNB Smart Chain and check
+            the address before proceeding.
           </p>
         </article>
 
@@ -390,12 +387,13 @@
 
       <div class="section-intro">
         <span class="kicker">TOKENOMICS</span>
-        <h2>Designed with a defined limit.</h2>
+        <h2>Transparent supply allocation.</h2>
         <p>
-          Core parameters reported for the
-          deployed ABCR contract. Supply in
-          circulation changes with burns
-          and rewards.
+          ABCR has a maximum lifetime mint
+          of 100 million tokens.
+          Founder allocation figures below
+          reflect the project's reported
+          burn and development reserve.
         </p>
       </div>
 
@@ -410,13 +408,30 @@
         <div class="metric">
           <span>INITIAL FOUNDER ALLOCATION</span>
           <strong>10,000,000</strong>
-          <small>ABCR</small>
+          <small>ABCR initially minted</small>
         </div>
 
         <div class="metric">
-          <span>REWARD MINT ALLOCATION</span>
+          <span>FOUNDER TOKENS REPORTED BURNED</span>
+          <strong>9,000,000</strong>
+          <small>ABCR — 90% of founder allocation</small>
+        </div>
+
+        <div class="metric">
+          <span>PROJECT DEVELOPMENT RESERVE</span>
+          <strong>1,000,000</strong>
+          <small>
+            ABCR reportedly retained in
+            founder wallet for development
+          </small>
+        </div>
+
+        <div class="metric">
+          <span>MAXIMUM REWARD MINT ALLOCATION</span>
           <strong>90,000,000</strong>
-          <small>ABCR (maximum)</small>
+          <small>
+            ABCR maximum additional issuance
+          </small>
         </div>
 
         <div class="metric">
@@ -429,6 +444,65 @@
 
       </div>
 
+      <!-- FOUNDER ALLOCATION VISUAL -->
+      <div class="link-panel"
+           style="display:block;margin-top:22px">
+
+        <h3>Founder Allocation Breakdown</h3>
+
+        <p>
+          Of the original 10,000,000 ABCR
+          founder allocation, the project
+          reports 9,000,000 ABCR burned
+          and 1,000,000 ABCR retained
+          for development.
+        </p>
+
+        <div
+          role="img"
+          aria-label="Reported founder allocation: 90 percent burned and 10 percent development reserve"
+          style="display:flex;width:100%;height:18px;overflow:hidden;border-radius:20px;background:#20342a;margin:18px 0"
+        >
+          <div
+            style="width:90%;background:#64748b"
+          ></div>
+          <div
+            style="width:10%;background:#66ff99"
+          ></div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:20px">
+
+          <p>
+            <strong style="color:#cbd5e1">
+              ● 90% Burned
+            </strong>
+            <br />
+            9,000,000 ABCR
+          </p>
+
+          <p>
+            <strong style="color:#66ff99">
+              ● 10% Development
+            </strong>
+            <br />
+            1,000,000 ABCR
+          </p>
+
+        </div>
+
+        <p style="font-size:12px;opacity:.75">
+          Founder burn and wallet reserve
+          figures are project-reported
+          and should be independently
+          verified on-chain.
+          Burned tokens do not restore
+          the lifetime mint allowance.
+        </p>
+
+      </div>
+
+      <!-- CONTRACT VERIFICATION -->
       <div class="link-panel">
 
         <div>
@@ -440,7 +514,7 @@
             on BscScan.
           </p>
 
-          <code>
+          <code style="overflow-wrap:anywhere">
             0x1B8C361E553AcbE735aa433C4d3ee4Ea92A32080
           </code>
         </div>
@@ -472,9 +546,10 @@
         </h2>
 
         <p>
-          Read the project overview, token
-          parameters, and risk disclosures
-          before interacting with ABCR.
+          Read the project overview,
+          token parameters and risk
+          disclosures before interacting
+          with ABCR.
         </p>
 
         <div class="hero-actions">
@@ -506,8 +581,8 @@
       </strong>
 
       <p>
-        Experimental on-chain burn and reward
-        protocol on BNB Smart Chain.
+        Experimental on-chain burn and
+        reward protocol on BNB Smart Chain.
       </p>
     </div>
 
@@ -532,8 +607,9 @@
     </div>
 
     <small>
-      ABCR involves irreversible transactions,
-      network fees and financial risk.
+      ABCR involves irreversible
+      transactions, network fees
+      and financial risk.
       No return is guaranteed.
     </small>
 
