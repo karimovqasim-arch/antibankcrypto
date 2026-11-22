@@ -1,239 +1,581 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#070b09">
 <title>ABCR Slap Arena</title>
+
 <style>
-:root{
-  font-family:Inter,system-ui,Arial,sans-serif;
-  color:#eaffee;
-  background:#070b09;
+:root {
+  --green: #66ff99;
+  --dark: #070b09;
+  --card: #101a14;
+  --border: #285239;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:radial-gradient(ellipse at 50% 10%,#16452a 0,#070b09 55%);
-  min-height:100dvh;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: radial-gradient(
+    ellipse at 50% 15%,
+    #16452a 0%,
+    #070b09 60%
+  );
+  color: #eaffee;
+  font-family: Arial, sans-serif;
 }
-main{max-width:530px;margin:auto;padding:22px 18px 50px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-weight:900;letter-spacing:.07em;color:#65ff9d}
-.tag{
-  font-size:11px;
-  border:1px solid #327a50;
-  border-radius:30px;
-  padding:7px 10px;
-  color:#9ff7b8;
+
+main {
+  max-width: 520px;
+  margin: auto;
+  padding: 22px 18px 50px;
 }
-h1{font-size:clamp(29px,7vw,44px);line-height:1.05;margin:32px 0 10px}
-h1 span{color:#62ff9d}
-p{color:#9cb9a5;line-height:1.5}
-.card{
-  background:#101a14;
-  border:1px solid #285239;
-  border-radius:22px;
-  padding:18px;
-  margin:18px 0;
-  box-shadow:0 14px 50px #0005;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.stat{background:#0b130e;border-radius:13px;padding:12px 7px;text-align:center}
-.stat strong{display:block;font-size:22px;color:#7dffa8}
-.stat small{font-size:11px;color:#98bba5}
-.arena{text-align:center;position:relative;padding:26px 0 10px;user-select:none}
-.target{
-  touch-action:manipulation;
-  cursor:pointer;
-  display:block;
-  border:0;
-  margin:0 auto;
-  background:radial-gradient(circle at 35% 25%,#b5ffb0,#52d886 58%,#17663d);
-  border-radius:50%;
-  width:min(65vw,265px);
-  height:min(65vw,265px);
-  font-size:115px;
-  box-shadow:0 0 0 12px #183825,0 0 70px #34ff8140;
-  transition:transform .1s;
-  position:relative;
+
+.logo {
+  font-weight: 900;
+  color: var(--green);
+  letter-spacing: 1px;
 }
-.target:active,.target.hit{transform:rotate(-9deg) scale(.92)}
-.pop{
-  position:absolute;
-  left:50%;
-  top:40%;
-  color:#a8ffae;
-  font-weight:900;
-  font-size:32px;
-  animation:float .55s ease-out forwards;
-  pointer-events:none;
+
+.tag {
+  border: 1px solid #327a50;
+  border-radius: 30px;
+  padding: 7px 10px;
+  color: #a0ffba;
+  font-size: 11px;
 }
-@keyframes float{
-  to{transform:translate(-50px,-100px);opacity:0}
+
+h1 {
+  font-size: clamp(30px, 8vw, 44px);
+  line-height: 1.1;
+  margin: 32px 0 10px;
 }
-.meter{height:12px;border-radius:30px;background:#23382b;overflow:hidden}
-.fill{
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,#21b86a,#a6ff65);
-  transition:width .15s;
+
+h1 span { color: var(--green); }
+
+p {
+  color: #a5bdac;
+  line-height: 1.5;
 }
-.row{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.muted{font-size:13px;color:#9ab6a1}
-.btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:14px;
-  padding:16px;
-  font-weight:800;
-  background:#69ff9b;
-  color:#06220f;
-  cursor:pointer;
-  text-align:center;
-  text-decoration:none;
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: 0 15px 45px #0005;
 }
-.btn:disabled{background:#385a43;color:#a4b7aa;cursor:not-allowed}
-.outline{
-  background:transparent;
-  border:1px solid #397a52;
-  color:#c8ffdc;
-  margin-top:9px;
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
 }
-.notice{
-  border-left:3px solid #a6e67e;
-  padding-left:12px;
-  font-size:13px;
-  color:#b2c9b8;
+
+.stat {
+  background: #0b130e;
+  padding: 12px 5px;
+  border-radius: 13px;
+  text-align: center;
 }
-footer{text-align:center;font-size:12px;color:#8fa69a;margin-top:25px}
-a{color:#7dffa8}
-.hidden{display:none}
+
+.stat strong {
+  display: block;
+  color: var(--green);
+  font-size: 22px;
+}
+
+.stat small {
+  color: #9cb9a5;
+  font-size: 11px;
+}
+
+.arena {
+  position: relative;
+  text-align: center;
+  padding: 35px 0 15px;
+  user-select: none;
+}
+
+.face {
+  position: relative;
+  display: block;
+  width: min(65vw, 265px);
+  height: min(65vw, 265px);
+  margin: auto;
+  padding: 0;
+  border: 8px solid #72ffa4;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 25%,
+    #ffe5b7,
+    #f5b978 70%,
+    #d98c55
+  );
+  box-shadow:
+    0 0 0 12px #183825,
+    0 0 70px #34ff8140;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform .12s, filter .12s;
+  overflow: hidden;
+}
+
+.face:active {
+  transform: scale(.91) rotate(-12deg);
+}
+
+.face.hit-left {
+  animation: slapLeft .25s ease-out;
+}
+
+.face.hit-right {
+  animation: slapRight .25s ease-out;
+}
+
+@keyframes slapLeft {
+  0% { transform: rotate(0) scale(1); }
+  40% { transform: rotate(-18deg) scale(.9); }
+  100% { transform: rotate(0) scale(1); }
+}
+
+@keyframes slapRight {
+  0% { transform: rotate(0) scale(1); }
+  40% { transform: rotate(18deg) scale(.9); }
+  100% { transform: rotate(0) scale(1); }
+}
+
+.hair {
+  position: absolute;
+  top: 3%;
+  left: 18%;
+  width: 64%;
+  height: 24%;
+  background: #47301f;
+  border-radius: 70% 50% 30% 30%;
+  transform: rotate(-8deg);
+}
+
+.eyes {
+  position: absolute;
+  top: 36%;
+  left: 19%;
+  width: 62%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eye {
+  width: 39px;
+  height: 44px;
+  background: white;
+  border: 3px solid #65432e;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pupil {
+  position: absolute;
+  width: 15px;
+  height: 19px;
+  background: #25201b;
+  border-radius: 50%;
+  bottom: 7px;
+  left: 13px;
+}
+
+.face.reacting .eye {
+  height: 13px;
+  margin-top: 16px;
+}
+
+.face.reacting .pupil {
+  display: none;
+}
+
+.nose {
+  position: absolute;
+  top: 49%;
+  left: 43%;
+  width: 14%;
+  height: 20%;
+  background: #e98c6c;
+  border-radius: 45% 45% 60% 60%;
+  border: 2px solid #c97958;
+}
+
+.cheek {
+  position: absolute;
+  top: 60%;
+  width: 25%;
+  height: 18%;
+  background: #f18b83;
+  border-radius: 50%;
+  opacity: .65;
+}
+
+.cheek.left { left: 7%; }
+.cheek.right { right: 7%; }
+
+.face.reacting .cheek {
+  background: #ff4545;
+  opacity: .95;
+}
+
+.mouth {
+  position: absolute;
+  top: 72%;
+  left: 37%;
+  width: 26%;
+  height: 14%;
+  background: #722c38;
+  border: 3px solid #783e36;
+  border-radius: 15% 15% 65% 65%;
+}
+
+.face.reacting .mouth {
+  width: 20%;
+  height: 22%;
+  left: 40%;
+  top: 68%;
+  border-radius: 50%;
+}
+
+.pop {
+  position: absolute;
+  top: 35%;
+  left: 55%;
+  color: #b4ff7b;
+  font-weight: 900;
+  font-size: 32px;
+  pointer-events: none;
+  animation: floatUp .6s ease-out forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+.meter {
+  height: 12px;
+  background: #23382b;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg,#21b86a,#a6ff65);
+  transition: width .15s;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.muted {
+  color: #9ab6a1;
+  font-size: 13px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--green);
+  color: #06220f;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background: #385a43;
+  color: #a4b7aa;
+  cursor: not-allowed;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #397a52;
+  color: #c8ffdc;
+  margin-top: 10px;
+}
+
+.notice {
+  border-left: 3px solid #a6e67e;
+  padding-left: 12px;
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #8fa69a;
+  margin-top: 25px;
+}
+
+a { color: #7dffa8; }
+
+@media(max-width:380px) {
+  .eye { width: 30px; height: 35px; }
+  .pupil { left: 9px; }
+}
 </style>
 </head>
+
 <body>
 <main>
+
 <header>
-  <div class="logo">◉ ABCR <span style="color:#eaffee">SLAP ARENA</span></div>
-  <div class="tag">TELEGRAM MINI APP</div>
+  <div class="logo">◉ ABCR SLAP ARENA</div>
+  <div class="tag">TELEGRAM GAME</div>
 </header>
 
-<h1>SLAP. SCORE.<br><span>LEVEL UP.</span></h1>
-<p>Tap the cartoon training dummy and build your slap score. This is a preview game; token rewards are not live.</p>
+<h1>SLAP THE<br><span>FUNNY FACE!</span></h1>
+
+<p>
+  Tap the funny cartoon face, collect slaps
+  and reach your next milestone!
+</p>
 
 <div class="card">
+
   <div class="stats">
     <div class="stat">
       <strong id="score">0</strong>
-      <small>Total slaps</small>
+      <small>Total Slaps</small>
     </div>
+
     <div class="stat">
       <strong id="cycle">0</strong>
-      <small>Current cycle</small>
+      <small>Completed Targets</small>
     </div>
+
     <div class="stat">
       <strong>1,000</strong>
-      <small>Target slaps</small>
+      <small>Target</small>
     </div>
   </div>
 
   <div class="arena" id="arena">
-    <button id="target" class="target" aria-label="Slap the cartoon training dummy">🥊</button>
-    <p><strong>SLAP THE DUMMY!</strong></p>
+
+    <button class="face" id="target"
+      aria-label="Slap the funny cartoon face">
+
+      <div class="hair"></div>
+
+      <div class="eyes">
+        <div class="eye">
+          <div class="pupil"></div>
+        </div>
+        <div class="eye">
+          <div class="pupil"></div>
+        </div>
+      </div>
+
+      <div class="nose"></div>
+      <div class="cheek left"></div>
+      <div class="cheek right"></div>
+      <div class="mouth"></div>
+
+    </button>
+
+    <p><strong>👋 TAP TO SLAP!</strong></p>
+
   </div>
 
   <div class="row">
     <span class="muted">Progress to 1,000</span>
     <strong id="percent">0%</strong>
   </div>
-  <div class="meter" role="progressbar" aria-label="Slap progress" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0" id="meter">
+
+  <div class="meter" id="meter"
+    role="progressbar"
+    aria-valuemin="0"
+    aria-valuemax="1000"
+    aria-valuenow="0">
+
     <div class="fill" id="fill"></div>
   </div>
+
 </div>
 
 <div class="card">
+
   <div class="row">
-    <strong>🎁 Reward rules</strong>
+    <strong>🎁 ABCR Rewards</strong>
     <span class="tag">PREVIEW</span>
   </div>
+
   <p>
-    Proposed reward: <strong style="color:#83ffab">100 ABCR</strong>
-    for 1,000 verified slaps, maximum once per 48 hours,
-    subject to eligibility and available reward budget.
+    <strong style="color:#83ffab">1,000 slaps = 100 ABCR</strong>
   </p>
-  <p id="status" class="notice" aria-live="polite">
-    Practice mode only. No real ABCR can be claimed yet.
+
+  <p>
+    Proposed reward limit: once every 48 hours,
+    after verification and subject to reward availability.
   </p>
-  <button id="claim" class="btn" disabled>
+
+  <p class="notice" id="status">
+    Practice mode. Real ABCR rewards are not active yet.
+  </p>
+
+  <button class="btn" disabled>
     Claim 100 ABCR — Coming Soon
   </button>
-  <a class="btn outline" href="../">← Back to AntiBank Crypto</a>
+
+  <a class="btn outline" href="../">
+    ← Back to AntiBank Crypto
+  </a>
+
 </div>
 
 <footer>
-  AntiBank Crypto • On-chain rewards are separate from this game •
-  <a href="../whitepaper.html">Whitepaper</a>
+  AntiBank Crypto • Slap Arena Preview
+  <p>
+    <a href="../whitepaper.html">Whitepaper</a>
+  </p>
 </footer>
+
 </main>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <script>
-(()=>{
-  'use strict';
-  const app=window.Telegram?.WebApp;
-  try{app?.ready();app?.expand()}catch{}
+(() => {
+  "use strict";
 
-  const key='abcr-slap-arena-preview-v1';
-  let score=0;
-  try{
-    const value=Number(localStorage.getItem(key));
-    if(Number.isSafeInteger(value)&&value>=0)
-      score=Math.min(value,100000000);
-  }catch{}
+  const app = window.Telegram?.WebApp;
 
-  const $=id=>document.getElementById(id);
+  try {
+    app?.ready();
+    app?.expand();
+  } catch(e) {}
 
-  function render(){
-    const progress=score%1000;
-    const display=score>0&&progress===0?100:Math.floor(progress/10);
-    $('score').textContent=score.toLocaleString('en-US');
-    $('cycle').textContent=Math.floor(score/1000).toLocaleString('en-US');
-    $('percent').textContent=display+'%';
-    $('fill').style.width=display+'%';
-    $('meter').setAttribute('aria-valuenow',progress);
-    $('status').textContent=score>=1000
-      ?'Practice target reached! Real rewards require server verification and are not enabled.'
-      :'Practice mode only. No real ABCR can be claimed yet.';
+  const key = "abcr-slap-arena-preview-v1";
+
+  let score = 0;
+
+  try {
+    const saved = Number(localStorage.getItem(key));
+    if(Number.isSafeInteger(saved) && saved >= 0) {
+      score = Math.min(saved, 100000000);
+    }
+  } catch(e) {}
+
+  const $ = id => document.getElementById(id);
+
+  function render() {
+    const progress = score % 1000;
+
+    const percent =
+      score > 0 && progress === 0
+        ? 100
+        : Math.floor(progress / 10);
+
+    $("score").textContent =
+      score.toLocaleString("en-US");
+
+    $("cycle").textContent =
+      Math.floor(score / 1000).toLocaleString("en-US");
+
+    $("percent").textContent = percent + "%";
+
+    $("fill").style.width = percent + "%";
+
+    $("meter").setAttribute(
+      "aria-valuenow",
+      progress
+    );
+
+    $("status").textContent =
+      score >= 1000
+        ? "Target reached! Real rewards require server verification."
+        : "Practice mode. Real ABCR rewards are not active yet.";
   }
 
-  let last=0;
-  $('target').addEventListener('click',()=>{
-    const now=performance.now();
-    if(now-last<65)return;
-    last=now;
-    score++;
+  let last = 0;
+  let hitCount = 0;
 
-    try{localStorage.setItem(key,String(score))}catch{}
+  $("target").addEventListener("click", () => {
+    const now = performance.now();
+
+    if(now - last < 65) return;
+
+    last = now;
+    score++;
+    hitCount++;
+
+    try {
+      localStorage.setItem(key, String(score));
+    } catch(e) {}
+
     render();
 
-    const t=$('target');
-    t.classList.remove('hit');
-    void t.offsetWidth;
-    t.classList.add('hit');
+    const face = $("target");
 
-    const pop=document.createElement('span');
-    pop.className='pop';
-    pop.textContent='+1';
-    $('arena').appendChild(pop);
-    setTimeout(()=>pop.remove(),600);
+    face.classList.remove(
+      "hit-left",
+      "hit-right",
+      "reacting"
+    );
 
-    try{app?.HapticFeedback?.impactOccurred('light')}catch{}
+    void face.offsetWidth;
+
+    face.classList.add(
+      hitCount % 2 === 0
+        ? "hit-left"
+        : "hit-right",
+      "reacting"
+    );
+
+    setTimeout(() => {
+      face.classList.remove(
+        "hit-left",
+        "hit-right",
+        "reacting"
+      );
+    }, 260);
+
+    const pop = document.createElement("span");
+    pop.className = "pop";
+    pop.textContent = "+1 👋";
+
+    $("arena").appendChild(pop);
+
+    setTimeout(() => pop.remove(), 600);
+
+    try {
+      app?.HapticFeedback?.impactOccurred("light");
+    } catch(e) {}
   });
 
   render();
 })();
 </script>
+
 </body>
 </html>
